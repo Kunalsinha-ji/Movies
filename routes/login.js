@@ -25,7 +25,7 @@ module.exports = () => {
                     Email.setEmail(email);
                     res.redirect("/");
                 } else {
-                    res.redirect("/login?message=Invalid%20Credentials%20!!'");
+                    res.redirect("/login?message=Invalid%20Credentials%20!!");
                 }
             }
         } catch (err) {
