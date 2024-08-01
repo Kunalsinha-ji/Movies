@@ -17,7 +17,7 @@ module.exports = () => {
             const user = await User.findOne({ email: email });
 
             if (!user) {
-                res.redirect("/login");
+                res.redirect("/login?message=User%20not%20found");
             } else {
                 const match = await bcrypt.compare(password, user.password);
 
@@ -25,7 +25,7 @@ module.exports = () => {
                     Email.setEmail(email);
                     res.redirect("/");
                 } else {
-                    res.redirect("/login");
+                    res.redirect("/login?message=Invalid%20Credentials%20!!'");
                 }
             }
         } catch (err) {
