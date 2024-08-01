@@ -19,7 +19,7 @@ module.exports = () => {
             const existingUser = await User.findOne({ email: email });
 
             if (existingUser) {
-                return res.redirect("/signup");
+                return res.redirect("/login?message=User%20already%20registered");
             }
 
             const hashedPassword = await bcrypt.hash(password, 10);
